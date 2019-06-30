@@ -1,0 +1,11 @@
+ ##统计ip的访问数
+ 
+ awk '{print $1}' access.log | sort -n | uniq | wc -l
+ 
+ ##查看某时间段的ip数
+ 
+ grep "30/Jun/2019" access.log | awk '{print $1}' | sort | uniq -c| sort -nr | wc -l
+
+## 查看访问最多的50个IP 
+
+ awk '{print $1}' access.log | sort -n |uniq -c | sort -rn | head -n 50
